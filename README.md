@@ -32,6 +32,10 @@ List of supported embeddings:
 Example code as follows:
 ```python
 # Parameters
+from FKEA.metric.FKEA import FKEA_Evaluator
+from FKEA.datasets.ImageFilesDataset import ImageFilesDataset
+from FKEA.datasets.TextFilesDataset import TextFilesDataset
+
 num_samples = 100
 sigma = 20
 rff_dim = 4000
