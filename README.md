@@ -1,6 +1,11 @@
 # FKEA Scores and Clustering
 
+[Paper: Towards a Scalable Reference-Free Evaluation of Generative Models](https://nips.cc/virtual/2024/poster/96008)
+
 This repository contains a demo script for performing image and text clustering using the `FKEA_Evaluator` class from the FKEA package. The script demonstrates how to set up and run the FKEA evaluator for clustering tasks and compute diversity scores for both image and text datasets.
+
+## Abstract
+Abstract: While standard evaluation scores for generative models are mostly reference-based, a reference-dependent assessment of generative models could be generally difficult due to the unavailability of applicable reference datasets. Recently, the reference-free entropy scores, VENDI and RKE, have been proposed to evaluate the diversity of generated data. However, estimating these scores from data leads to significant computational costs for large-scale generative models. In this work, we leverage the random Fourier features framework to reduce the metrics' complexity and propose the *Fourier-based Kernel Entropy Approximation (FKEA)* method. We utilize FKEA's approximated eigenspectrum of the kernel matrix to efficiently estimate the mentioned entropy scores. Furthermore, we show the application of FKEA's proxy eigenvectors to reveal the method's identified modes in evaluating the diversity of produced samples. We provide a stochastic implementation of the FKEA assessment algorithm with a complexity O(n) linearly growing with sample size n. We extensively evaluate FKEA's numerical performance in application to standard image, text, and video datasets. Our empirical results indicate the method's scalability and interpretability applied to large-scale generative models.
 
 ## Requirements
 
@@ -113,6 +118,15 @@ true_scores = FKEA.non_f_diversity_scores(texts, test_feats=embeddings)
 - The script assumes that the embeddings (test_feats parameter) are list-like object convertable to torch tensor.
 - Please use your personal OpenAI api key to access gpt embeddings
 
-
+## Cite our work
+```text
+@inproceedings{
+    aospanov2024fkea,
+    title={Towards a Scalable Reference-Free Evaluation of Generative Models},
+    author={Azim Ospanov and Jingwei Zhang and Mohammad Jalali and Xuenan Cao and Andrej Bogdanov and Farzan Farnia},
+    booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+    year={2024}
+}
+```
 This `README.md` file provides a clear and concise guide for users to understand and run the demo script, including installation instructions, usage examples, and parameter explanations. Adjust the paths and filenames in the script to match your specific environment and dataset.
 
